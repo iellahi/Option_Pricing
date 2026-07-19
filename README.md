@@ -31,7 +31,7 @@ Simulated stock price paths under Geometric Brownian Motion, starting at $100. O
 
 ![Convergence](figures/convergence.png)
 
-Monte Carlo call price estimates converge to the Black-Scholes price as the number of simulations grows. The antithetic estimate lands closer to the true price with a tighter confidence band at low simulation counts, which is the point of using it.
+Monte Carlo call price estimates converge to the Black-Scholes price as the number of simulations grows. The antithetic estimate lands closer to the true price with a tighter confidence band at low simulation counts.
 
 ![Price vs volatility](figures/price_vs_volatility.png)
 
