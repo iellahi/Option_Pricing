@@ -1,5 +1,7 @@
 # Option Pricing with Monte Carlo
 
+![Poster](poster/poster.png)
+
 [Poster PDF](poster/poster.pdf)
 
 I developed this project as part of the Directed Reading Program in Mathematics at Florida State University, Spring 2025.
@@ -36,11 +38,7 @@ $$P = K e^{-rT} N(-d_2) - S_0 N(-d_1)$$
 
 ![Convergence](figures/convergence.png)
 
-<<<<<<< HEAD
-Monte Carlo call price estimates converge to the Black-Scholes price as the number of simulations grows. The antithetic estimate lands closer to the true price with a tighter confidence band at low simulation counts.
-=======
 Monte-Carlo estimates converge to the Black-Scholes price with more simulations; antithetic sampling provides a tighter confidence interval.
->>>>>>> 717624e (small edits)
 
 ![Price vs volatility](figures/price_vs_volatility.png)
 
