@@ -71,7 +71,7 @@
 \end{columns}
 \vskip0.6cm
 {\centering\color{fsugarnet}\rule{\textwidth}{8pt}\par}
-\vskip1.4cm
+\vskip0.8cm
 
 % ================= COLUMNS =================
 \begin{columns}[t]
@@ -80,9 +80,9 @@
 \begin{column}{0.30\paperwidth}
 
 \begin{block}{Abstract}
-The Black-Scholes Model was the first widely used method to calculate the theoretical value of an option contract. It derives the price of a European-style call option from an assumption of randomness, as seen in Brownian Motion. I studied the model under the guidance of a graduate student, using probability theory, stochastic calculus, and differential equations.
+The Black-Scholes Model was the first widely used method to calculate the theoretical value of an option contract. It uses an assumption of randomness, as in Brownian Motion, to derive the price of a European-style call option. I studied the model under the guidance of a graduate student, using probability theory, stochastic calculus, and differential equations.
 
-I then used Python to compare actual (Black-Scholes) and derived (Monte-Carlo) option prices, and plotted graphs to visualize the convergence of Monte-Carlo prices to the actual price and how option prices respond to different variables.
+I then used Python to compare exact (Black-Scholes) and simulated (Monte-Carlo) option prices, and plotted graphs to visualize the convergence of Monte-Carlo prices to the exact price and how option prices respond to different variables.
 \end{block}
 
 \begin{block}{Black-Scholes Equation}
@@ -99,7 +99,7 @@ Combining the two:
 which implies the Black-Scholes partial differential equation:
 \[ \frac{\partial f}{\partial t} + rS\frac{\partial f}{\partial S} + \frac{1}{2}\sigma^2 S^2\frac{\partial^2 f}{\partial S^2} = rf \]
 
-where $S$ is the current stock price, $K$ the strike price, $f$ the price of an option depending on $S$ and $t$, $t$ the time to expiration, $r$ the risk-free rate of interest, $\sigma$ the rate of volatility, and $\Pi$ the value of the portfolio.
+where $S$ is the current stock price, $K$ the strike price, $f$ the price of an option depending on $S$ and $t$, $t$ calendar time, $r$ the risk-free rate of interest, $\sigma$ the rate of volatility, and $\Pi$ the value of the portfolio.
 \end{block}
 
 \end{column}
@@ -110,11 +110,11 @@ where $S$ is the current stock price, $K$ the strike price, $f$ the price of an 
 \begin{block}{Graphs}
 \centering
 \includegraphics[width=0.78\textwidth]{../figures/convergence.png}\\[0.1cm]
-{\justifying Monte-Carlo estimates converge to the Black-Scholes price as simulations grow; antithetic sampling gives a tighter confidence band.\par}\vskip0.5cm
+{\justifying Monte-Carlo estimates converge to the Black-Scholes price with more simulations; antithetic sampling provides a tighter confidence interval.\par}\vskip0.5cm
 \includegraphics[width=0.78\textwidth]{../figures/price_vs_volatility.png}\\[0.1cm]
-{\justifying Higher volatility raises option prices: more volatility means more upside potential.\par}\vskip0.5cm
+{\justifying Higher volatility means higher option prices and higher potential for upside\par}\vskip0.5cm
 \includegraphics[width=0.78\textwidth]{../figures/price_vs_stock_price.png}\\[0.1cm]
-{\justifying The call price rises with the stock price above the strike and flattens toward zero below it.\par}
+{\justifying Well below strike price, the call price tends toward zero; above it, it rises with the stock price\par}
 \end{block}
 
 \end{column}

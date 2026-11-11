@@ -151,13 +151,13 @@ def make_price_vs_stock_price_figure():
     stock_prices = np.linspace(50, 125, 200)
     call_prices = [black_scholes_call(s, K, T, r, sigma) for s in stock_prices]
     put_prices = [black_scholes_put(s, K, T, r, sigma) for s in stock_prices]
-    # Intrinsic value of the call: max(S - K*exp(-rT), 0)
-    intrinsic = np.maximum(stock_prices - K * np.exp(-r * T), 0)
+    # Lower bound for the European call: max(S - K*exp(-rT), 0)
+    call_lower_bound = np.maximum(stock_prices - K * np.exp(-r * T), 0)
 
     fig, ax = plt.subplots(figsize=(8, 4.5))
     ax.plot(stock_prices, call_prices, color=GARNET, linewidth=1.8, label="Call")
     ax.plot(stock_prices, put_prices, color=TEAL, linewidth=1.8, label="Put")
-    ax.plot(stock_prices, intrinsic, color=GREY, linestyle="--", linewidth=1, label="Intrinsic value")
+    ax.plot(stock_prices, call_lower_bound, color=GREY, linestyle="--", linewidth=1, label="Call lower bound")
     # Vertical line at the strike price
     ax.axvline(K, color=GREY, linestyle="--", linewidth=1)
     ax.text(K, ax.get_ylim()[1] * 0.95, " Strike", color=GREY, fontsize=9, ha="left", va="top")
